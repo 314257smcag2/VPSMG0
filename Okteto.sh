@@ -7,8 +7,6 @@ wget https://github.com/coder/code-server/releases/download/v4.9.1/code-server_4
 dpkg -i code-server_4.9.1_amd64.deb
 code-server --bind-addr 127.0.0.1:12345 >> vscode.log &
 echo "#################################################################################"
-wget -O - https://deb.nodesource.com/setup_18.x | bash && apt-get -y install nodejs && npm i -g updates
-echo "#################################################################################"
 wget https://deb.torproject.org/torproject.org/pool/main/t/tor/tor_0.4.7.12-1~focal+1_amd64.deb
 dpkg -i tor_0.4.7.12-1~focal+1_amd64.deb
 apt --fix-broken install -y
