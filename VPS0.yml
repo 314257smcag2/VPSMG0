@@ -1,5 +1,5 @@
 services:
-  vpsmg1:
+  vpsmg0:
     build: .
     shm_size: 2gb
     ports:
