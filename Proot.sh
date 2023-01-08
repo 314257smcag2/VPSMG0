@@ -1,4 +1,6 @@
 #!/bin/sh
+apt-get update -y && apt-get upgrade -y 
+apt-get install wget curl xz-utils -y
 mkdir Proot
 cd Proot
 wget https://uk.lxd.images.canonical.com/images/ubuntu/focal/amd64/cloud/20230107_07:42/rootfs.tar.xz && tar -xf rootfs.tar.xz && rm -rf rootfs.tar.xz
