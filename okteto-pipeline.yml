@@ -1,9 +1,5 @@
 icon: https://raw.githubusercontent.com/314257smcag2/VPSMG0/main/VPSMG0.png
 deploy:
   - okteto stack deploy --build -f VPS0.yml
-  - okteto stack deploy --build -f VPS1.yml
-  - okteto stack deploy --build -f VPS2.yml
 devs:
   - VPS0.yml
-  - VPS1.yml
-  - VPS2.yml
