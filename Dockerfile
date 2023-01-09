@@ -3,6 +3,8 @@ FROM ubuntu:20.04
 ENV USER_NAME SHAKUGAN
 ENV ROOT_PASSWORD AliAly032230
 
+RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
+RUN dpkg-reconfigure --frontend noninteractive tzdata
 RUN apt update && apt-get upgrade -y 
 RUN apt install -y wget curl nano sudo git xz-utils openssh-server build-essential net-tools dialog apt-utils libevent* tasksel slim; \
     apt --fix-broken install && apt clean;
