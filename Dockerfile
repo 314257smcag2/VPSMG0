@@ -4,8 +4,7 @@ ENV USER_NAME SHAKUGAN
 ENV ROOT_PASSWORD AliAly032230
 
 RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
-RUN apt-get install tzdata && dpkg-reconfigure --frontend noninteractive tzdata
-RUN apt update && apt-get upgrade -y 
+RUN apt update && apt-get upgrade -y && apt-get install tzdata && dpkg-reconfigure --frontend noninteractive tzdata
 RUN apt install -y wget curl nano sudo git xz-utils openssh-server build-essential net-tools dialog apt-utils libevent* tasksel slim; \
     apt --fix-broken install && apt clean;
 
