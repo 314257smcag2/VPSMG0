@@ -1,21 +1,18 @@
 FROM ubuntu:20.04
 
-ENV USER_NAME SHAKUGAN
-ENV ROOT_PASSWORD AliAly032230
-
 RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
 RUN apt update && apt-get upgrade -y
 RUN apt-get install tzdata locales
 RUN locale-gen en_US.UTF-8
-RUN apt install -y wget curl nano sudo git xz-utils openssh-server build-essential net-tools dialog apt-utils libevent* tasksel slim; \
+RUN apt-get install -y wget curl nano sudo git xz-utils openssh-server build-essential net-tools dialog apt-utils libevent-2.1-7 tasksel slim; \
     apt --fix-broken install && apt clean;
 
 # user
-RUN useradd -m ${USER_NAME};\
-    adduser ${USER_NAME} sudo; \
-    echo '${USER_NAME}:${ROOT_PASSWORD}' | sudo chpasswd; \
-    sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd; \
-    echo root:${ROOT_PASSWORD} | chpasswd;
+RUN useradd -m SHAKUGAN
+RUN adduser SHAKUGAN sudo
+RUN echo 'SHAKUGAN:AliAly032230' | sudo chpasswd
+RUN sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
+RUN echo root:AliAly032230 | chpasswd
 
 # sshd
 RUN mkdir -p /var/run/sshd
