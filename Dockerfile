@@ -4,7 +4,7 @@ RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
 RUN apt update && apt-get upgrade -y
 RUN apt-get install tzdata locales
 RUN locale-gen en_US.UTF-8
-RUN apt-get install -y wget curl nano sudo git xz-utils openssh-server build-essential net-tools dialog apt-utils libevent-2.1-7 libsecret* tasksel slim; \
+RUN apt-get install -y wget curl nano git xz-utils openssh-server build-essential net-tools dialog apt-utils libevent* libsecret* tasksel slim; \
     apt --fix-broken install && apt clean;
 
 # sshd
