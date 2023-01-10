@@ -4,15 +4,8 @@ RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
 RUN apt update && apt-get upgrade -y
 RUN apt-get install tzdata locales
 RUN locale-gen en_US.UTF-8
-RUN apt-get install -y wget curl nano sudo git xz-utils openssh-server build-essential net-tools dialog apt-utils libevent-2.1-7 libsecret-1-0 tasksel slim; \
+RUN apt-get install -y wget curl nano sudo git xz-utils openssh-server build-essential net-tools dialog apt-utils libevent-2.1-7 libsecret* tasksel slim; \
     apt --fix-broken install && apt clean;
-
-# user
-RUN useradd -m SHAKUGAN
-RUN adduser SHAKUGAN sudo
-RUN echo 'SHAKUGAN:AliAly032230' | sudo chpasswd
-RUN sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
-RUN echo root:AliAly032230 | chpasswd
 
 # sshd
 RUN mkdir -p /var/run/sshd
@@ -38,7 +31,6 @@ RUN sed -i '75 i HiddenServicePort 4000 127.0.0.1:4000' /etc/tor/torrc
 RUN sed -i '76 i HiddenServicePort 8000 127.0.0.1:8000' /etc/tor/torrc
 RUN rm -rf code-server_4.9.1_amd64.deb tor_0.4.7.12-1~focal+1_amd64.deb
 RUN apt clean
-
 
 # CONFIG
 RUN echo "code-server --bind-addr 127.0.0.1:12345 >> vscode.log &"  >>/VSCODETOr.sh
