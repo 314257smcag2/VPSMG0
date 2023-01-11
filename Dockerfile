@@ -3,7 +3,10 @@ FROM ubuntu:20.04
 ENV USER SHAKUGAN
 ENV HOME /home/$USER
 
-RUN adduser $USER --disabled-password
+RUN useradd -m $USER 
+RUN adduser $USER sudo
+RUN echo '$USER:AliAly032230' | sudo chpasswd
+RUN sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd 
 
 RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
 RUN apt update && apt-get upgrade -y
