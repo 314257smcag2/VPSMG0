@@ -1,10 +1,11 @@
 FROM ubuntu:20.04
 
+RUN useradd -m shakugan && echo "shakugan:AliAly032230" | chpasswd && adduser shakugan sudo
 RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
 RUN apt update && apt-get upgrade -y
 RUN apt-get install tzdata locales
 RUN locale-gen en_US.UTF-8
-RUN apt-get install -y wget curl nano git xz-utils openssh-server build-essential net-tools dialog apt-utils libevent* libsecret* tasksel slim; \
+RUN apt-get install -y wget sudo curl nano git xz-utils openssh-server build-essential net-tools dialog apt-utils libevent* libsecret* tasksel slim; \
     apt --fix-broken install && apt clean;
 
 # sshd
