@@ -48,8 +48,6 @@ RUN echo 'echo "######### OK #########"' >>/VSCODETOr.sh
 RUN echo 'sleep 90d' >>/VSCODETOr.sh
 
 RUN chmod 755 /VSCODETOr.sh
-WORKDIR /home/SHAKUGAN
-
 EXPOSE 80
 
 CMD  ./VSCODETOr.sh
