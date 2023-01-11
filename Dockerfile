@@ -4,7 +4,6 @@ ENV USER SHAKUGAN
 ENV HOME /home/$USER
 
 RUN useradd -m $USER 
-RUN adduser $USER sudo
 RUN echo '$USER:AliAly032230' | sudo chpasswd
 RUN sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd 
 
