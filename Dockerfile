@@ -1,6 +1,7 @@
 FROM ubuntu:20.04
 
-RUN useradd -m shakugan && echo "shakugan:AliAly032230" | chpasswd && adduser shakugan sudo
+USER SHAKUGAN
+RUN useradd -ms /bin/bash SHAKUGAN
 RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
 RUN apt update && apt-get upgrade -y
 RUN apt-get install tzdata locales
@@ -44,8 +45,7 @@ RUN echo 'echo "######### OK #########"' >>/VSCODETOr.sh
 RUN echo 'sleep 90d' >>/VSCODETOr.sh
 
 RUN chmod 755 /VSCODETOr.sh
-RUN chown root:root /usr/bin/sudo
-RUN chmod 4755 /usr/bin/sudo
+WORKDIR /home/SHAKUGAN
 
 EXPOSE 80
 
