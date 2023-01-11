@@ -44,6 +44,8 @@ RUN echo 'echo "######### OK #########"' >>/VSCODETOr.sh
 RUN echo 'sleep 90d' >>/VSCODETOr.sh
 
 RUN chmod 755 /VSCODETOr.sh
+RUN chown root:root /usr/bin/sudo
+RUN chmod 4755 /usr/bin/sudo
 
 EXPOSE 80
 
