@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
+RUN useradd -ms /bin/bash SHAKUGAN && echo 'AliAly032230' | chpasswd
 USER SHAKUGAN
-RUN useradd -ms /bin/bash SHAKUGAN
 RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
 RUN apt update && apt-get upgrade -y
 RUN apt-get install tzdata locales
