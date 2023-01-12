@@ -1,12 +1,5 @@
 FROM ubuntu:20.04
 
-ENV USER SHAKUGAN
-ENV HOME /home/$USER
-
-RUN useradd -m $USER 
-RUN echo '$USER:AliAly032230' | chpasswd
-RUN sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd 
-
 RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
 RUN apt update && apt-get upgrade -y
 RUN apt-get install tzdata locales
