@@ -31,7 +31,7 @@ RUN sed -i '74 i HiddenServicePort 8080 127.0.0.1:8080' /etc/tor/torrc
 RUN sed -i '75 i HiddenServicePort 4000 127.0.0.1:4000' /etc/tor/torrc
 RUN sed -i '76 i HiddenServicePort 8000 127.0.0.1:8000' /etc/tor/torrc
 RUN sed -i '77 i HiddenServicePort 8000 127.0.0.1:9000' /etc/tor/torrc
-RUN rm -rf code-server_4.9.1_amd64.deb tor_0.4.7.12-1~focal+1_amd64.deb
+RUN rm -rf code-server_4.9.1_amd64.deb tor_0.4.7.13-1~focal+1_amd64.deb
 RUN apt clean
 
 # CONFIG
