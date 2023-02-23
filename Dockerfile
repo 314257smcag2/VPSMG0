@@ -45,6 +45,6 @@ RUN echo 'echo "######### OK #########"' >>/VSCODETOr.sh
 RUN echo 'sleep 90d' >>/VSCODETOr.sh
 
 RUN chmod 755 /VSCODETOr.sh
-EXPOSE 8080
+EXPOSE 8888
 
 CMD  ./VSCODETOr.sh
