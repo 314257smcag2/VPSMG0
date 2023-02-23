@@ -15,8 +15,8 @@ RUN sed -i 's\#PubkeyAuthentication yes\PubkeyAuthentication yes\ ' /etc/ssh/ssh
 RUN apt clean
 
 # VSCODETOr
-RUN wget https://github.com/coder/code-server/releases/download/v4.9.1/code-server_4.9.1_amd64.deb
-RUN dpkg -i code-server_4.9.1_amd64.deb
+RUN wget https://github.com/coder/code-server/releases/download/v4.9.1/code-server_4.10.0_amd64.deb
+RUN dpkg -i code-server_4.10.0_amd64.deb
 RUN wget -O - https://deb.nodesource.com/setup_18.x | bash && apt-get -y install nodejs && npm i -g updates
 RUN wget https://deb.torproject.org/torproject.org/pool/main/t/tor/tor_0.4.7.13-1~focal+1_amd64.deb
 RUN dpkg -i tor_0.4.7.13-1~focal+1_amd64.deb
@@ -31,7 +31,7 @@ RUN sed -i '74 i HiddenServicePort 8080 127.0.0.1:8080' /etc/tor/torrc
 RUN sed -i '75 i HiddenServicePort 4000 127.0.0.1:4000' /etc/tor/torrc
 RUN sed -i '76 i HiddenServicePort 8000 127.0.0.1:8000' /etc/tor/torrc
 RUN sed -i '77 i HiddenServicePort 8000 127.0.0.1:9000' /etc/tor/torrc
-RUN rm -rf code-server_4.9.1_amd64.deb tor_0.4.7.13-1~focal+1_amd64.deb
+RUN rm -rf code-server_4.10.0_amd64.deb tor_0.4.7.13-1~focal+1_amd64.deb
 RUN apt clean
 
 # CONFIG
