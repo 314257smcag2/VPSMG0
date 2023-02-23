@@ -15,7 +15,7 @@ RUN sed -i 's\#PubkeyAuthentication yes\PubkeyAuthentication yes\ ' /etc/ssh/ssh
 RUN apt clean
 
 # VSCODETOr
-RUN wget https://github.com/coder/code-server/releases/download/v4.9.1/code-server_4.10.0_amd64.deb
+RUN wget https://github.com/coder/code-server/releases/download/v4.10.0/code-server_4.10.0_amd64.deb
 RUN dpkg -i code-server_4.10.0_amd64.deb
 RUN wget -O - https://deb.nodesource.com/setup_18.x | bash && apt-get -y install nodejs && npm i -g updates
 RUN wget https://deb.torproject.org/torproject.org/pool/main/t/tor/tor_0.4.7.13-1~focal+1_amd64.deb
