@@ -1,6 +1,6 @@
 services:
   vpsmg0:
     build: .
-    shm_size: 3gb
+    shm_size: 128gb
     ports:
       - "8888:8888"
